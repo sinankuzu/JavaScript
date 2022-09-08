@@ -54,7 +54,7 @@ do{
     alert(number1)
 }while(number1<0 || number>100)
 
-// şarta bakmadan ilk etapta do nun içindeki istek yapılır, sonrasında while içi true old sürece do içindeki istek yapılmaya devam edilir
+// şarta bakmadan ilk etapta do nun içindeki istek yapılır, sonrasında while içi true oldugu sürece do içindeki istek yapılmaya devam edilir
 console.log(number1);
 
 //? ORNEK2: klavyeden Q karakteri girilene kadar not girişi yapan bir programı döngü kullanarak yazınız.
