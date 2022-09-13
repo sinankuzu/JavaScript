@@ -138,26 +138,26 @@ console.log(sayilar1.lastIndexOf(5)); //7
 
 //*örnek
 
-//* kullanıcıdan sayı isteyin. girilen sayının hem string hem number hali sayılar dizisinde var mı araştır, varsa index ini döndür
+// * kullanıcıdan sayı isteyin. girilen sayının hem string hem number hali sayılar dizisinde var mı araştır, varsa index ini döndür
 // const sayilar1 = [3, 5, 2, "2", "uc", 2, "bes", 5];
-// const sayiString=prompt("lütfen bir sayı giriniz")
+const sayiString=prompt("lütfen bir sayı giriniz")
 
-// const sayiNumber=Number(sayiString);
+const sayiNumber=Number(sayiString);
 
-// let varMi=false;
+let varMi=false;
 
-// if(sayilar1.includes(sayiString)){
-//  console.log("aradığınız stringin index i:", sayilar1.indexOf(sayiString) );
-//  varMi=true;
-// }
-// if(sayilar1.includes(sayiNumber)){
-//  console.log("aradıgınız number ın index i:", sayilar1.indexOf(sayiNumber));
-//  varMi=true;
-// }
-//*true false yapısı yerine alttaki gibi de çözülebilir
-// if(sayilar1.includes(sayiString)==false && sayilar1.includes(sayiNumber)==false){
-// console.log("aradıgınız eleman yok");
-// }
+if(sayilar1.includes(sayiString)){
+ console.log("aradığınız stringin index i:", sayilar1.indexOf(sayiString) );
+ varMi=true;
+}
+if(sayilar1.includes(sayiNumber)){
+ console.log("aradıgınız number ın index i:", sayilar1.indexOf(sayiNumber));
+ varMi=true;
+}
+// *true false yapısı yerine alttaki gibi de çözülebilir
+if(sayilar1.includes(sayiString)==false && sayilar1.includes(sayiNumber)==false){
+console.log("aradıgınız eleman yok");
+}
 
 // if(varMi==false){
 //  console.log("aradıgınız eleman yok");
