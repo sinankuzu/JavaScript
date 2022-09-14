@@ -63,3 +63,19 @@ const animal = [
   "aslan",
   "aslan",
 ];
+
+const userAnimal=prompt("lutfen bir hayvan ismi giriniz");
+
+const findAnimal=(animal, userAnimal)=>{
+
+    let sayac = 0;
+
+    for(let i in animal){
+        if(animal[i] == userAnimal)
+        sayac++
+    }
+
+
+}
+
+findAnimal(animal, userAnimal)
