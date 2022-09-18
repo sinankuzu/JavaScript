@@ -161,6 +161,18 @@ console.log(people);
   
 //* ornek5: Developer olanların adlarını ve yaşlarını yeni bir object olarak saklayın
 
+
+
+const yeniSakla =people.filter((e)=> e.job == "developer").map((e)=>({
+  adlar:e.name,
+  yaslar:e.age
+}))
+
+console.log(yeniSakla);
+
+
+
+
 const newObject = people
   .filter((p) => p.job == "developer")
   .map((a) => ({
