@@ -87,6 +87,60 @@ console.log(fiyatlar);
 console.log(yeniDizi);
 
 
- 
+ //* ======================================================
+//*                       PIPELINE
+//* ======================================================
+
+//!slide daki soru, pipeline olmazsa böyle uzun uzun if le çözeriz
+//* Fiyatı 100 TL den fazla olanlara %10 zam, 100 TL den az olanlara ise %15 zam yapılmak isteniyor. Ayrıca, zamlı olan yeni değerleri örnekteki gibi diziye saklamak istiyoruz.
+const tlFiyatlar = [100, 150, 100, 50, 80];
+
+const degerler = tlFiyatlar.map((d) => {
+  if (d > 100) {
+    d = (d * 110) / 100;
+  } else {
+    d = (d * 115) / 100;
+  }
+  return d;
+});
+console.log(degerler);
+
+const ilk = tlFiyatlar.filter((a) => a > 100).map((c) => c * 1.1); //[165]
+const son = tlFiyatlar.filter((a) => a <= 100).map((z) => z * 115 / 100) //[115,115,57.5,92]
+console.log(ilk.concat(son));
+
+//*-------------- ÖRNEK -------------------
+//*people dizisinde ismin ilk harfine göre arama yaparak ilgili isimlerin ilk 3 harfini yazdıran bir fonksiyon yazınız.
+const people = [
+  "Baser",
+  "Berivan",
+  "Mehmet",
+  "Mustafa",
+  "Mali",
+  "Halil",
+  "Fatih",
+  "Hasret",
+  "Fatma",
+];
+
+const bulHarf=(harf)=>{
+people.filter((a)=>a.startsWith(harf.toUpperCase())).map((b)=>b.slice(0,3)).forEach((x)=>console.log(x))
+}
+bulHarf("b")
+bulHarf("M")
+
+//* ======================================================
+//*                      REDUCE
+//* ======================================================
+
+//* salaries dizisindeki maaşları toplayınız (reduce metodu kullanın)
+
+const salaries=[3000,5000,4000,6000,7500]
+//!forEach metodu dizilerde geçerlidir, tek eleman döndüren reduce de kullanamayız
+
+ console.log( salaries.reduce((toplam,diziEleman)=>toplam+diziEleman,0))
+
+//* salaries dizisindeki maaşları çarpınız (reduce metodu kullanın)
+ console.log( salaries.reduce((carpim,diziEleman)=>carpim*diziEleman,1))
 
 
