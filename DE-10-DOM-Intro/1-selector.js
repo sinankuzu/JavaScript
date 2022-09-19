@@ -1,12 +1,8 @@
-======================================================
+// ======================================================
 //*                   GETELEMENTSBYCLASSNAME()
 //* class ismiyle çağırıyoruz
 //*======================================================
-New
 
-
-Ashley M
-  10:01 AM
 //* ======================================================
 //*                   GETELEMENTBYID()
 //* ======================================================
@@ -71,3 +67,37 @@ document.querySelector("title").textContent="DOM MANUPULATION";
 
 document.querySelector("#badi").style.backgroundImage="linear-gradient(green,pink)";
 document.querySelector(".H2").StyleSheet.color="pink";
+
+const paragraf2=document.querySelectorAll("p");
+console.log(paragraf2); //Nodelist
+
+paragraf2[1].style.fontSize="50px";
+
+/ Bir NodeList ve bir HTMLcollection hemen hemen aynı şeydir.
+
+// Her ikisi de bir belgeden çıkarılan düğümlerin (öğelerin) dizi benzeri koleksiyonlarıdır (listeleridir). Düğümlere indeks numaraları ile erişilebilir. Endeks 0'dan başlar.
+
+// Her ikisinin de listedeki (koleksiyon) öğelerin sayısını döndüren bir uzunluk özelliği vardır.
+
+
+//!(örnek üstlerde baslik kısmında var) HTMLCollection öğelerine adları, kimlikleri veya dizin numaralarıyla erişilebilir.
+// baslik.namedItem("id1").style.color = "red";
+//  baslik[0].style.color="red";
+
+// NodeList öğelerine yalnızca dizin numaralarıyla erişilebilir.
+
+// Bir HTMLCollection her zaman canlı bir koleksiyondur. Örnek: DOM'daki bir listeye bir <li> öğesi eklerseniz, HTMLCollection'daki liste de değişecektir.
+
+// Bir NodeList genellikle statik bir koleksiyondur. Örnek: DOM'daki bir listeye bir <li> öğesi eklerseniz, NodeList'teki liste değişmez.
+// getElementsByClassName()ve yöntemleri , getElementsByTagName() canlı bir HTMLCollection döndürür.
+
+// querySelectorAll(), statik bir NodeList döndürür.
+//!burada netten https://softauthor.com/javascript-htmlcollection-vs-nodelist/ adresinden göster
+// Dizi Değil!
+// Bir NodeList bir dizi gibi görünebilir ama öyle değildir.
+
+// Bir NodeList içinde döngü yapabilir ve düğümlerine dizine göre başvurabilirsiniz.
+
+// Ancak, bir NodeList'te push(), pop() veya join() gibi Array yöntemlerini kullanamazsınız.
+
+// https://softauthor.com/javascript-htmlcollection-vs-nodelist/
