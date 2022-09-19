@@ -17,7 +17,7 @@ document.querySelector(".H2").onmouseover = () => {
 document.querySelector("#badi").style.backgroundColor = "pink";
 };
 
-//* onclick- ondblclick
+//* example-2 onclick- ondblclick
 
 const birinci= document.querySelector(".bir");
 const ikinci = document.querySelector(".iki");
