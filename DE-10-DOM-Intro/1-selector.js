@@ -73,7 +73,7 @@ console.log(paragraf2); //Nodelist
 
 paragraf2[1].style.fontSize="50px";
 
-/ Bir NodeList ve bir HTMLcollection hemen hemen aynı şeydir.
+// Bir NodeList ve bir HTMLcollection hemen hemen aynı şeydir.
 
 // Her ikisi de bir belgeden çıkarılan düğümlerin (öğelerin) dizi benzeri koleksiyonlarıdır (listeleridir). Düğümlere indeks numaraları ile erişilebilir. Endeks 0'dan başlar.
 
