@@ -43,4 +43,19 @@ const buton = document.querySelector("#btn");
 
 buton.onclick=()=>{
     document.querySelector("body").style.backgroundImage="linear-gradient(to right, purple,gray)"
+
+    buton.textContent="SEARCH"
+    buton.style.fontSize="30px"
+    header.style.color="red"
 }
+
+// METHOD-4 (sadece JAVASCRIPT te yazilir- addEventListener())
+
+buton.addEventListener("click", () => {
+  document.querySelector("body").style.backgroundImage =
+    "linear-gradient(to right, purple,gray)";
+
+  buton.textContent = "SEARCH";
+  buton.style.fontSize = "30px";
+  header.style.color = "red";
+});
