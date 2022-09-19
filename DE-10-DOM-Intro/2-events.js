@@ -11,6 +11,9 @@
 //  <h1 class="header" onmouseover="style.color='black'" onmouseout="style.color='blue'">DOM Temelleri</h1>
 
 
+
+
+
 // METHOD-3 (SADECE JAVASCRIPT TE YAZILAN YOL)
 
 document.querySelector(".H2").onmouseover = () => {
@@ -33,4 +36,11 @@ birinci.ondblclick=()=>{
 
     ikinci.src = "./img/logo2.png";
     birinci.src = "./img/js_logo.png";
+}
+
+// *example-3 (button onclick)
+const buton = document.querySelector("#btn");
+
+buton.onclick=()=>{
+    document.querySelector("body").style.backgroundImage="linear-gradient(to right, purple,gray)"
 }
