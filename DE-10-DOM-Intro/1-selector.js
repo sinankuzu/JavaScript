@@ -65,3 +65,9 @@ baslik[0].innerHTML="<a href='http://www.clarusway.com'> DOM ÇOK KOLAY</a>"
 //* ======================================================
 //*                  QUERYSELECTOR,QUERYSELECTORALL
 //*======================================================
+
+
+document.querySelector("title").textContent="DOM MANUPULATION";
+
+document.querySelector("#badi").style.backgroundImage="linear-gradient(green,pink)";
+document.querySelector(".H2").StyleSheet.color="pink";
