@@ -16,3 +16,21 @@
 document.querySelector(".H2").onmouseover = () => {
 document.querySelector("#badi").style.backgroundColor = "pink";
 };
+
+//* onclick- ondblclick
+
+const birinci= document.querySelector(".bir");
+const ikinci = document.querySelector(".iki");
+
+birinci.onclick=()=>{
+    birinci.src = "./img/logo2.png";
+    ikinci.src = "./img/js_logo.png";
+}
+
+birinci.ondblclick=()=>{
+    // birinci.src="./img/dom-olaylar.png";
+    // ikinci.src="./img/logo2.png";
+
+    ikinci.src = "./img/logo2.png";
+    birinci.src = "./img/js_logo.png";
+}
