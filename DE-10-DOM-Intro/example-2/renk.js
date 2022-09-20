@@ -151,8 +151,20 @@ const renkler = [
 
 const renkDegistir = document.querySelector(".btn")
 const rastgele = Math.floor(Math.random() * renkler.length);
-
+const rastgele2 = Math.floor(Math.random() * renkler.length);
 console.log(rastgele);
 
 console.log(renkler[rastgele]);
 
+document.querySelector(".btn").onclick=()=>{
+
+    const rastgele = Math.floor(Math.random() * renkler.length);
+    const rastgele2 = Math.floor(Math.random() * renkler.length);
+    document.querySelector("body").style.backgroundColor = renkler[rastgele]
+
+    document.querySelector(".renk").textContent = renkler[rastgele]
+
+    document.querySelector("h1").style.color = renkler[rastgele]
+
+    document.querySelector("h1").style.backgroundColor = renkler[rastgele2]
+} 
