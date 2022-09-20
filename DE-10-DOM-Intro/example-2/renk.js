@@ -148,3 +148,11 @@ const renkler = [
   "Yellow",
   "YellowGreen",
 ];
+
+const renkDegistir = document.querySelector(".btn")
+const rastgele = Math.floor(Math.random() * renkler.length);
+
+console.log(rastgele);
+
+console.log(renkler[rastgele]);
+
