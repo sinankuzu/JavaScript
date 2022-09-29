@@ -122,7 +122,7 @@ function adetButon() {
       console.log(sepettekiler);
 
       // urun toplami ekrana bastirma
-
+      const indirimlifiyat = document.querySelector("indirim-price");
       adet1.closest(".row").querySelector(".ürün-toplam").textContent =
         indirimlifiyat * adet1.textContent;
     };
