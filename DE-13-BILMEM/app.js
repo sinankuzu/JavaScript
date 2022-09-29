@@ -11,26 +11,24 @@ let sepettekiler = [
 
 sepettekiler.forEach((urun)=>{
 
-document.querySelector(
-  "#urun-rowlari"
-).innerHTML += `<div class="card mb-3" style="max-width: 540px;">
+document.querySelector("#urun-rowlari").innerHTML += `<div class="card mb-3" style="max-width: 540px;">
 
   <div class="row g-0">
 
     <div class="col-md-5">
-      <img src=    class="img-fluid rounded-start" alt="...">
+      <img src=${urun.img}    class="img-fluid rounded-start" alt="...">
     </div>
 
     <div class="col-md-7">
 
       <div class="card-body">
       
-        <h5 class="card-title">      </h5>
+        <h5 class="card-title"> ${urun.name}      </h5>
         
              <div class="ürün-price">
                     <p class="text-warning h2">$
-                      <span class="indirim-price">   </span>
-                      <span class="h5 text-dark text-decoration-line-through"> </span>
+                      <span class="indirim-price">${(urun.price * 0.7).toFixed(2)}   </span>
+                      <span class="h5 text-dark text-decoration-line-through">${urun.price} </span>
                     </p>
                   </div>
 
@@ -42,7 +40,7 @@ document.querySelector(
                       <button class="btn btn-secondary btn-sm">
                         <i class="fas fa-minus"></i>
                       </button>
-                      <p class="d-inline mx-4" id="ürün-adet"></p>
+                      <p class="d-inline mx-4" id="ürün-adet">${urun.adet}</p>
                       <button class="btn btn-secondary btn-sm">
                         <i class="fas fa-plus"></i>
                       </button>
@@ -57,7 +55,7 @@ document.querySelector(
                   </div>
 
                   <div class="mt-2">
-                    Ürün Toplam: $<span class="ürün-toplam"></span>
+                    Ürün Toplam: $<span class="ürün-toplam">${(urun.price * 0.7 * urun.adet  * urun.adet).toFixed(2)}</span>
                   </div>
       </div>
     </div>
