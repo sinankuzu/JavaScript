@@ -1,7 +1,8 @@
 //* ======================================================================
 //*                 Checkout Page Solution
 //*map filter, dest,spread=======================================================================
-
+const kargo = 15
+const vergi = 0.18
 let sepettekiler = [
   { name: "Vintage Backpack", price: 34.99, adet: 1, img: "./img/photo1.png" },
   { name: "Levi Shoes", price: 40.99, adet: 1, img: "./img/photo2.png" },
@@ -151,3 +152,20 @@ function adetButon() {
     };
   });
 }
+
+document.querySelector("#odeme-table").innerHTML = `<table>
+<body>
+<tr>
+<th>Ara Toplam</th>
+<td>${}</td>
+<th>Vergi (18%)</th>
+<td>${}</td>
+<th>Kargo</th>
+<td></td>
+<th>Toplam</th>
+<td></td>
+</tr>
+</body>
+
+
+`;
