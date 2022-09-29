@@ -92,7 +92,6 @@ function removeSil(btn) {
   sepettekiler = sepettekiler.filter(
     (ürün) => ürün.name != btn.closest(".card").querySelector("h5").textContent
   );
-  console.log(sepettekiler);
 }
 
 //  ADET DEGISTIRME
@@ -118,23 +117,25 @@ function adetButon() {
           urun.adet = Number(adet1.textContent);
         }
       });
-
-      
+      if (adet1.textContent < 1) {
+        removeSil(minus);
+        alert("devam ederseniz sepetinizden gidicek");
+        console.log("naber");
+      }
 
       // urun toplami ekrana bastirma
-      
-      
-      
-      adet1.closest(".row").querySelector(".ürün-toplam").textContent =
-        (adet1.closest(".row").querySelector(".indirim-price").textContent *
-        adet1.textContent).toFixed(2);
+
+      adet1.closest(".row").querySelector(".ürün-toplam").textContent = (
+        adet1.closest(".row").querySelector(".indirim-price").textContent *
+        adet1.textContent
+      ).toFixed(2);
     };
 
     const plus = kutu.lastElementChild;
-    
+
     plus.onclick = () => {
       adet1.textContent = Number(adet1.textContent) + 1;
-      
+
       sepettekiler.map((urun) => {
         if (
           urun.name == adet1.closest(".card").querySelector("h5").textContent
@@ -142,14 +143,11 @@ function adetButon() {
           urun.adet = Number(adet1.textContent);
         }
       });
-     
-      document.querySelector(".ürün-toplam").textContent =
-        (adet1.textContent * document.querySelector(".indirim-price").textContent).toFixed(2) ;
 
-      
-      
-    
-        
+      adet1.closest(".row").querySelector(".ürün-toplam").textContent = (
+        adet1.closest(".row").querySelector(".indirim-price").textContent *
+        adet1.textContent
+      ).toFixed(2);
     };
   });
 }
