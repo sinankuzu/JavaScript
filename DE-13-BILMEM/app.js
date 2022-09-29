@@ -119,12 +119,37 @@ function adetButon() {
         }
       });
 
-      console.log(sepettekiler);
+      
 
       // urun toplami ekrana bastirma
-      const indirimlifiyat = document.querySelector("indirim-price");
+      
+      
+      
       adet1.closest(".row").querySelector(".ürün-toplam").textContent =
-        indirimlifiyat * adet1.textContent;
+        (adet1.closest(".row").querySelector(".indirim-price").textContent *
+        adet1.textContent).toFixed(2);
+    };
+
+    const plus = kutu.lastElementChild;
+    
+    plus.onclick = () => {
+      adet1.textContent = Number(adet1.textContent) + 1;
+      
+      sepettekiler.map((urun) => {
+        if (
+          urun.name == adet1.closest(".card").querySelector("h5").textContent
+        ) {
+          urun.adet = Number(adet1.textContent);
+        }
+      });
+     
+      document.querySelector(".ürün-toplam").textContent =
+        (adet1.textContent * document.querySelector(".indirim-price").textContent).toFixed(2) ;
+
+      
+      
+    
+        
     };
   });
 }
