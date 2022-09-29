@@ -65,3 +65,15 @@ document.querySelector("#urun-rowlari").innerHTML += `<div class="card mb-3" sty
 </div>`;
 
 })
+
+//  SILME
+document.querySelectorAll(".remove-ürün").forEach((btn) =>
+
+btn.onclick=()=>{
+    removeSil(btn)
+});
+
+function removeSil(btn){
+    btn.closest(".card").remove()
+}
+//  ADET DEGISTIRME
