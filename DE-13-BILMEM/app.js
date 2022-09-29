@@ -89,3 +89,22 @@ console.log(sepettekiler);
 //  ADET DEGISTIRME
 
 adetButon()
+
+function adetButon(){
+    //!burada - adet ve + elementlerle işim olduğu için, mesela - ye basınca adet (kardeşi) değişsin istediğim için, minus a ulaşıp ona tıklanınca closest ile parent ına oradan da kardeşine ulaş eksilt diyebiliriz. ya da gerekli elementlerin parent ına ulaşıp çocuklarına adlar verip, artıko adlarla işlem yapabiliriz 
+    document.querySelectorAll(".adet-controller").forEach((kutu)=>{
+const minus = kutu.firstElementChild;
+const adet1 = kutu.querySelector("#ürün-adet");
+
+minus.onclick=()=>{
+    // minus adet degisimini
+    adet1.textContent=adet1.textContent-1
+
+    // sepettekilerde adet degisimini yapalim
+
+    sepettekiler.map((urun)=>(urun.adet = adet1.textContent))
+}
+console.log(sepettekiler)
+    })
+    
+    }
