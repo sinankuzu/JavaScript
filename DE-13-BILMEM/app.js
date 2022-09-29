@@ -10,20 +10,22 @@ let sepettekiler = [
 
 
 sepettekiler.forEach((urun)=>{
+// DESTRUCTURING
+const{name,price,adet,img} = urun; 
 
 document.querySelector("#urun-rowlari").innerHTML += `<div class="card mb-3" style="max-width: 540px;">
 
   <div class="row g-0">
 
     <div class="col-md-5">
-      <img src=${urun.img}    class="img-fluid rounded-start" alt="...">
+      <img src=${img}    class="img-fluid rounded-start" alt="...">
     </div>
 
     <div class="col-md-7">
 
       <div class="card-body">
       
-        <h5 class="card-title"> ${urun.name}      </h5>
+        <h5 class="card-title"> ${name}      </h5>
         
              <div class="ürün-price">
                     <p class="text-warning h2">$
@@ -40,7 +42,7 @@ document.querySelector("#urun-rowlari").innerHTML += `<div class="card mb-3" sty
                       <button class="btn btn-secondary btn-sm">
                         <i class="fas fa-minus"></i>
                       </button>
-                      <p class="d-inline mx-4" id="ürün-adet">${urun.adet}</p>
+                      <p class="d-inline mx-4" id="ürün-adet">${adet}</p>
                       <button class="btn btn-secondary btn-sm">
                         <i class="fas fa-plus"></i>
                       </button>
@@ -55,7 +57,7 @@ document.querySelector("#urun-rowlari").innerHTML += `<div class="card mb-3" sty
                   </div>
 
                   <div class="mt-2">
-                    Ürün Toplam: $<span class="ürün-toplam">${(urun.price * 0.7 * urun.adet  * urun.adet).toFixed(2)}</span>
+                    Ürün Toplam: $<span class="ürün-toplam">${(price * 0.7 * adet  * adet).toFixed(2)}</span>
                   </div>
       </div>
     </div>
