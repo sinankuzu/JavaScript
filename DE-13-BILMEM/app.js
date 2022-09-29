@@ -18,19 +18,19 @@ document.querySelector("#urun-rowlari").innerHTML += `<div class="card mb-3" sty
   <div class="row g-0">
 
     <div class="col-md-5">
-      <img src=${img}    class="img-fluid rounded-start" alt="...">
+      <img src=${img} class="img-fluid rounded-start" alt="...">
     </div>
 
     <div class="col-md-7">
 
       <div class="card-body">
       
-        <h5 class="card-title"> ${name}      </h5>
+        <h5 class="card-title">${name}</h5>
         
              <div class="ürün-price">
                     <p class="text-warning h2">$
-                      <span class="indirim-price">${(urun.price * 0.7).toFixed(2)}   </span>
-                      <span class="h5 text-dark text-decoration-line-through">${urun.price} </span>
+                      <span class="indirim-price">${(urun.price * 0.7).toFixed(2)}</span>
+                      <span class="h5 text-dark text-decoration-line-through">${urun.price}</span>
                     </p>
                   </div>
 
@@ -80,9 +80,12 @@ function removeSil(btn){
 
 // diziden silme
 
-sepettekiler= sepettekiler.filter((urun)=>
-urun.name!= btn.closest(".card").querySelector("h5").textContent)
-
+sepettekiler = sepettekiler.filter(
+  (ürün) => ürün.name != btn.closest(".card").querySelector("h5").textContent
+);
+console.log(sepettekiler);
 }
 
 //  ADET DEGISTIRME
+
+adetButon()
