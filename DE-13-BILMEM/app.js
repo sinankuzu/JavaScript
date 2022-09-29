@@ -69,11 +69,20 @@ document.querySelector("#urun-rowlari").innerHTML += `<div class="card mb-3" sty
 //  SILME
 document.querySelectorAll(".remove-ürün").forEach((btn) =>
 
+// ekrandan silme
 btn.onclick=()=>{
     removeSil(btn)
 });
 
 function removeSil(btn){
     btn.closest(".card").remove()
+
+
+// diziden silme
+
+sepettekiler= sepettekiler.filter((urun)=>
+urun.name!= btn.closest(".card").querySelector("h5").textContent)
+
 }
+
 //  ADET DEGISTIRME
