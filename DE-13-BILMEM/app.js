@@ -8,12 +8,13 @@ let sepettekiler = [
   { name: "Antique Clock", price: 69.99, adet: 1, img: "./img/photo3.jpg" },
 ];
 
+sepettekiler.forEach((urun) => {
+  // DESTRUCTURING
+  const { name, price, adet, img } = urun;
 
-sepettekiler.forEach((urun)=>{
-// DESTRUCTURING
-const{name,price,adet,img} = urun; 
-
-document.querySelector("#urun-rowlari").innerHTML += `<div class="card mb-3" style="max-width: 540px;">
+  document.querySelector(
+    "#urun-rowlari"
+  ).innerHTML += `<div class="card mb-3" style="max-width: 540px;">
 
   <div class="row g-0">
 
@@ -29,8 +30,12 @@ document.querySelector("#urun-rowlari").innerHTML += `<div class="card mb-3" sty
         
              <div class="ürün-price">
                     <p class="text-warning h2">$
-                      <span class="indirim-price">${(urun.price * 0.7).toFixed(2)}</span>
-                      <span class="h5 text-dark text-decoration-line-through">${urun.price}</span>
+                      <span class="indirim-price">${(urun.price * 0.7).toFixed(
+                        2
+                      )}</span>
+                      <span class="h5 text-dark text-decoration-line-through">${
+                        urun.price
+                      }</span>
                     </p>
                   </div>
 
@@ -57,59 +62,69 @@ document.querySelector("#urun-rowlari").innerHTML += `<div class="card mb-3" sty
                   </div>
 
                   <div class="mt-2">
-                    Ürün Toplam: $<span class="ürün-toplam">${(price * 0.7 * adet  * adet).toFixed(2)}</span>
+                    Ürün Toplam: $<span class="ürün-toplam">${(
+                      price *
+                      0.7 *
+                      adet *
+                      adet
+                    ).toFixed(2)}</span>
                   </div>
       </div>
     </div>
   </div>
 </div>`;
-
-})
-
-//  SILME
-document.querySelectorAll(".remove-ürün").forEach((btn) =>
-
-// ekrandan silme
-btn.onclick=()=>{
-    removeSil(btn)
 });
 
-function removeSil(btn){
-    btn.closest(".card").remove()
-
-
-// diziden silme
-
-sepettekiler = sepettekiler.filter(
-  (ürün) => ürün.name != btn.closest(".card").querySelector("h5").textContent
+//  SILME
+document.querySelectorAll(".remove-ürün").forEach(
+  (btn) =>
+    // ekrandan silme
+    (btn.onclick = () => {
+      removeSil(btn);
+    })
 );
-console.log(sepettekiler);
+
+function removeSil(btn) {
+  btn.closest(".card").remove();
+
+  // diziden silme
+
+  sepettekiler = sepettekiler.filter(
+    (ürün) => ürün.name != btn.closest(".card").querySelector("h5").textContent
+  );
+  console.log(sepettekiler);
 }
 
 //  ADET DEGISTIRME
 
-adetButon()
+adetButon();
 
-function adetButon(){
-    //!burada - adet ve + elementlerle işim olduğu için, mesela - ye basınca adet (kardeşi) değişsin istediğim için, minus a ulaşıp ona tıklanınca closest ile parent ına oradan da kardeşine ulaş eksilt diyebiliriz. ya da gerekli elementlerin parent ına ulaşıp çocuklarına adlar verip, artıko adlarla işlem yapabiliriz 
-    document.querySelectorAll(".adet-controller").forEach((kutu)=>{
-const minus = kutu.firstElementChild;
-const adet1 = kutu.querySelector("#ürün-adet");
+function adetButon() {
+  //!burada - adet ve + elementlerle işim olduğu için, mesela - ye basınca adet (kardeşi) değişsin istediğim için, minus a ulaşıp ona tıklanınca closest ile parent ına oradan da kardeşine ulaş eksilt diyebiliriz. ya da gerekli elementlerin parent ına ulaşıp çocuklarına adlar verip, artıko adlarla işlem yapabiliriz
+  document.querySelectorAll(".adet-controller").forEach((kutu) => {
+    const minus = kutu.firstElementChild;
+    const adet1 = kutu.querySelector("#ürün-adet");
 
-minus.onclick=()=>{
-    // minus adet degisimini
-    adet1.textContent=adet1.textContent-1
+    minus.onclick = () => {
+      // minus adet degisimini
+      adet1.textContent = adet1.textContent - 1;
 
-    // sepettekilerde adet degisimini yapalim
+      // sepettekilerde adet degisimini yapalim
 
-    sepettekiler.map((urun)=>{
-        if(urun.name ==adet1.closest(".card").querySelector("h5").textContent){
-            urun.adet =Number(adet1.textContent);
+      sepettekiler.map((urun) => {
+        if (
+          urun.name == adet1.closest(".card").querySelector("h5").textContent
+        ) {
+          urun.adet = Number(adet1.textContent);
         }
-    })
+      });
 
-console.log(sepettekiler)
+      console.log(sepettekiler);
+
+      // urun toplami ekrana bastirma
+
+      adet1.closest(".row").querySelector(".ürün-toplam").textContent =
+        indirimlifiyat * adet1.textContent;
+    };
+  });
 }
-    })
-    
-    }
