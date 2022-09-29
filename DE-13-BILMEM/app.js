@@ -102,9 +102,14 @@ minus.onclick=()=>{
 
     // sepettekilerde adet degisimini yapalim
 
-    sepettekiler.map((urun)=>(urun.adet = adet1.textContent))
-}
+    sepettekiler.map((urun)=>{
+        if(urun.name ==adet1.closest(".card").querySelector("h5").textContent){
+            urun.adet =Number(adet1.textContent);
+        }
+    })
+
 console.log(sepettekiler)
+}
     })
     
     }
