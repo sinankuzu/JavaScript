@@ -1,8 +1,11 @@
 //* ======================================================================
 //*                 Checkout Page Solution
 //*map filter, dest,spread=======================================================================
-const kargo = 15
-const vergi = 0.18
+const kargo = 15;
+const vergi = 0.18;
+
+
+
 let sepettekiler = [
   { name: "Vintage Backpack", price: 34.99, adet: 1, img: "./img/photo1.png" },
   { name: "Levi Shoes", price: 40.99, adet: 1, img: "./img/photo2.png" },
@@ -11,6 +14,7 @@ let sepettekiler = [
 
 sepettekiler.forEach((urun) => {
   // DESTRUCTURING
+  
   const { name, price, adet, img } = urun;
 
   document.querySelector(
@@ -130,6 +134,7 @@ function adetButon() {
         adet1.closest(".row").querySelector(".indirim-price").textContent *
         adet1.textContent
       ).toFixed(2);
+    //   toplam = adet1.closest(".row").querySelector(".ürün-toplam").textContent;
     };
 
     const plus = kutu.lastElementChild;
@@ -149,21 +154,57 @@ function adetButon() {
         adet1.closest(".row").querySelector(".indirim-price").textContent *
         adet1.textContent
       ).toFixed(2);
+    //   toplam = adet1.closest(".row").querySelector(".ürün-toplam").textContent;
     };
   });
 }
+// const urunToplam = document.querySelectorAll(".ürün-toplam");
 
-document.querySelector("#odeme-table").innerHTML = `<table>
+
+// const toplam = Array.from(urunToplam).reduce(
+//   (acc, item) => acc + Number(item.textContent),
+//   0
+// );
+//  const vergiPrice = toplam * vergi;
+//  const shipping = toplam > 0 ? kargo : 0;
+//  const cardTotal = toplam + shipping + vergiPrice;
+
+//  document.querySelector(".ara-toplam").innerHTML = toplam.toFixed(2);
+//  document.querySelector(".vergi").textContent = vergiPrice.toFixed(2);
+//  document.querySelector(".kargo").textContent = shipping.toFixed(2);
+//  document.querySelector(".toplam").textContent = cardTotal.toFixed(2);
+
+const araToplam = Array.from(ürünToplam).reduce(
+    (acc, item) => acc + Number(item.textContent),
+    0
+  );
+  const vergiPrice = araToplam * vergi;
+  const shipping = araToplam > 0 ? kargo : 0;
+  const cardTotal = araToplam + shipping + vergiPrice;
+
+  document.querySelector(".aratoplam").textContent = araToplam.toFixed(2);
+  document.querySelector(".vergi").textContent = vergiPrice.toFixed(2);
+  document.querySelector(".kargo").textContent = shipping.toFixed(2);
+  document.querySelector(".toplam").textContent = cardTotal.toFixed(2);
+}
+ 
+document.querySelector("#odeme-table").innerHTML = `<table class="table">
 <body>
 <tr>
-<th>Ara Toplam</th>
-<td>${}</td>
-<th>Vergi (18%)</th>
-<td>${}</td>
-<th>Kargo</th>
-<td></td>
-<th>Toplam</th>
-<td></td>
+<th class="text-start">Ara Toplam</th>
+<td class="ara-toplam text-end">${toplam}</td>
+</tr>
+<tr>
+<th class="text-start">Vergi (18%)</th>
+<td class="text-end">${(toplam * 0.18).toFixed(2)} </td>
+</tr>
+<tr>
+<th class="text-start">Kargo</th>
+<td class="text-end">${kargo}</td>
+</tr>
+<tr>
+<th class="text-start">Toplam</th>
+<td class="text-end">${((toplam * 1.18) + kargo).toFixed(2)}</td>
 </tr>
 </body>
 
