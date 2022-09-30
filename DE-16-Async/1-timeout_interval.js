@@ -15,3 +15,13 @@
 //? Ozellikle bir API'den veya Veritabanindan veri cekme, Giris/Cikis islemleri,
 //? Dosya Okuma/Yazma islemleri gibi zaman tuketen kodlarda Async Programlama
 //? kullanilmasi cok onemlidir.
+
+// ****SENKRON PROGRAMLAMAKTAN ****
+
+const bekle = (ms) =>{
+    const start = new Date().getTime()
+    while(new Date().getTime()<start+ms)
+    {}
+}
+
+bekle(3000)
