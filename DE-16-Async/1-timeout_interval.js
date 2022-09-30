@@ -23,5 +23,6 @@ const bekle = (ms) =>{
     while(new Date().getTime()<start+ms)
     {}
 }
-
+console.log("hello");
 bekle(3000)
+console.log("hello naber");
