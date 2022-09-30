@@ -186,7 +186,7 @@ const araToplam = Array.from(ürünToplam).reduce(
   document.querySelector(".vergi").textContent = vergiPrice.toFixed(2);
   document.querySelector(".kargo").textContent = shipping.toFixed(2);
   document.querySelector(".toplam").textContent = cardTotal.toFixed(2);
-}
+
  
 document.querySelector("#odeme-table").innerHTML = `<table class="table">
 <body>

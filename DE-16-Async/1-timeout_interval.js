@@ -31,5 +31,35 @@
 
 // *Asenkron (setTimeout) 1 seferlik
 // ************************/
+// setTimeout(()=>{
+//     // non-blocking code, macro task kuyruguna girer
+// console.log("Selam");
+
+// }, 2000)
+// console.log("Aleykum selam")
+
+// setTimeout(() => {
+//   // non-blocking code
+//   console.log("naber napiyosun");
+// }, 3000);
+//!Aleyküm Selam- sleam Naber çalışır, 3. nün süresi 1.den azsa, 2-3-1 sırasında çalışır
+//!settimeout müsait zamanda ortaya çıkar, onun sırası geçtiğinde alttaki işlemler bitince çalışır
+
+
 // *Asenkron(setInterval, clearInterval) belli araliklarla durdurulana kadar devam eder. Mesela 1 dakikada bir doviz kurunu guncellemek icin kullanilabilir
 // ************************/
+
+//? setInterval non-blocking
+
+// console.log("counter started");
+// let counter = 0;
+// const interval1 = setInterval(()=>{
+// console.log(++counter);
+// if(counter == 5){
+//     clearInterval(interval1)
+// }
+// },1000)
+
+// console.log("counter finished");
+
+//? callback hell
