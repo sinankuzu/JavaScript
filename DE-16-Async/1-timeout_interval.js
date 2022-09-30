@@ -17,12 +17,19 @@
 //? kullanilmasi cok onemlidir.
 
 // ****SENKRON PROGRAMLAMAKTAN ****
+// !blocking code
+// const bekle = (ms) =>{
+//     const start = new Date().getTime()
+//     while(new Date().getTime()<start+ms)
+//     {}
+// }
+// console.log("hello");
+// console.time("timer1")
+// bekle(3000)
+// console.timeEnd("timer1");
+// console.log("hello naber");
 
-const bekle = (ms) =>{
-    const start = new Date().getTime()
-    while(new Date().getTime()<start+ms)
-    {}
-}
-console.log("hello");
-bekle(3000)
-console.log("hello naber");
+// *Asenkron (setTimeout) 1 seferlik
+// ************************/
+// *Asenkron(setInterval, clearInterval) belli araliklarla durdurulana kadar devam eder. Mesela 1 dakikada bir doviz kurunu guncellemek icin kullanilabilir
+// ************************/
