@@ -15,7 +15,10 @@ try {
 
 }
 let dizi = ["turkey", "peru", "canada"]
-getirCountry("turkey")
+dizi.forEach((a) => {
+  getirCountry(a);
+});
+// getirCountry("turkey")
 
 ekranaBastir = (country) =>{
     document.querySelector(
