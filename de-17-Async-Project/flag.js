@@ -1,6 +1,6 @@
 const getirCountry =async (name) =>{
 try {
-    const res = await fetch(`https://restcountries.com/v3.1/name/${name}`);
+    const res = await fetch(`https://restcountries.com/v3.1/name/${name}` );
     if (!res.ok) {
       throw new Error("url de hata var");
     }
@@ -14,7 +14,7 @@ try {
 
 
 }
-let dizi = ["turkey", "peru", "canada"]
+let dizi = ["turkey", "peru", "canada", "germany"];
 dizi.forEach((a) => {
   getirCountry(a);
 });
@@ -23,7 +23,7 @@ dizi.forEach((a) => {
 ekranaBastir = (country) =>{
     document.querySelector(
       ".countries"
-    ).innerHTML = `<div class="card text-start w-50 shadow-lg bg-light">
+    ).innerHTML += `<div class="card text-start w-50 shadow-lg bg-light">
       <img src=${country.flags.png} class="card-img-top" alt="...">
       <div class="card-body">
          <h5 class="card-title">${country.name.common}</h5>
@@ -31,8 +31,8 @@ ekranaBastir = (country) =>{
       </div>
       <ul class="list-group list-group-flush">
          <li class="list-group-item"><i class="fas fa-lg fa-landmark"></i> ${country.capital} </li>
-         <li class="list-group-item"><i class="fas fa-lg fa-comments"></i> ${country.languages.tur}</li>
-         <li class="list-group-item"><i class="fas fa-lg fa-money-bill-wave"> ${country.currencies.TRY.name}</i> </li>
+         <li class="list-group-item"><i class="fas fa-lg fa-comments"></i> ${Object.values(country.languages)}</li>
+         <li class="list-group-item"><i class="fas fa-lg fa-money-bill-wave"> ${Object.values(country.currencies)[0].name}</i> </li>
       </ul>
    </div> `;    
 }
