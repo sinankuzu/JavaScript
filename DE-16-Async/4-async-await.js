@@ -32,6 +32,9 @@ const getUsers = async () => {
     const response = await fetch("https://api.tvmaze.com/search/shows?q=girls");
 
     if (!response.ok) {
+
+         girlsDiv.innerHTML = `<h1 class="text-danger">An error occured!</h1>
+<img src="./img/error.jpg" alt="" />`;
       throw new Error(`Biraz hata var : ${response.status}`);
     }
 
